@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon.png">
+    <title>Blog</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/monsteradmin/" />
+    <!-- Custom CSS -->
+    <link href="./assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link href="./assets/extra-libs/c3/c3.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="./dist/css/style.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="app">
+        <header>
+            <div class="container pt-4 pb-4">
+                <header class="topbar" data-navbarbg="skin1">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-lg-6 d-flex">
+                            <a href="index.html" class="site-logo">
+                                FUNNY CODE
+                            </a>
+                            <a href="#"
+                                class="ml-auto d-inline-block d-lg-none site-menu-toggle js-menu-toggle text-black"><span
+                                    class="icon-menu h3"></span></a>
+                        </div>
+                        <div class="col-12 col-lg-6 ml-auto d-flex">
+                            <div class="ml-md-auto top-social d-none d-lg-inline-block">
+                                <a href="#" class="d-inline-block p-3"><i class="ti-facebook"></i></a>
+                                <a href="#" class="d-inline-block p-3"><i class="ti-twitter"></i></a>
+                                <a href="#" class="d-inline-block p-3"><i class="ti-instagram"></i></a>
+                                <a href="#" class="d-inline-block p-3"><i class="ti-google"></i></a>
+                                <form class="app-search">
+                                    <input type="text" class="form-control rounded-pill" placeholder="Search...">
+                                    <a class="srh-btn"><i class="ti-search"></i></a>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-6 d-block d-lg-none text-right">
+                        </div>
+                    </div>
+                </header>
+            </div>
+        
+            <nav>
+                <div class="container">
+                    <ul class="nav align-items-center d-flex justify-content-center">
+                        <li class="nav-item"> <a href="javascript:void(0)"
+                                class="nav-link note-link d-flex align-items-center active px-2 px-md-3 mr-0 mr-md-2"
+                                id="all-category">
+                                <span class="d-none d-md-block">HOME</span></a>
+                        </li>
+                        <li class="nav-item"> <a href="javascript:void(0)"
+                                class="nav-link note-link d-flex align-items-center px-2 px-md-3 mr-0 mr-md-2"
+                                id="note-business">
+                                <span class="d-none d-md-block">CODE</span></a>
+                        </li>
+                        <li class="nav-item"> <a href="javascript:void(0)"
+                                class="nav-link note-link d-flex align-items-center px-2 px-md-3 mr-0 mr-md-2" id="note-social">
+                                <span class="d-none d-md-block">LIFE</span></a>
+                        </li>
+                        <li class="nav-item"> <a href="javascript:void(0)"
+                                class="nav-link note-link d-flex align-items-center px-2 px-md-3 mr-0 mr-md-2"
+                                id="note-important">
+                                <span class="d-none d-md-block">ABOUT</span></a>
+                        </li>
+                        <li class="nav-item"> <a href="javascript:void(0)"
+                                class="nav-link note-link d-flex align-items-center px-2 px-md-3 mr-0 mr-md-2" id="add-notes">
+                                <span class="d-none d-md-block">CONTACT</span></a>
+                        </li>
+                        <li class="nav-item"> <a href="javascript:void(0)"
+                            class="nav-link note-link d-flex align-items-center px-2 px-md-3 mr-0 mr-md-2" id="add-notes">
+                            <span class="d-none d-md-block" data-toggle="modal" data-target="#login-modal">LOGIN</span></a>
+                    </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    
+        <div class="main-content">
+            <div class="container mt-4 mb-4">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active" data-interval="5000"> 
+                            <div class="row d-flex align-items-center">
+                                <div class="col-6 p-4">
+                                    <img class="img-fluid" src="./assets/images/big/img4.jpg" alt="Second slide">
+                                </div>
+                                <div class="col-6 p-5">
+                                    <div class="content">
+                                        <h4 class="category">
+                                            Editor's Pick
+                                        </h4>
+                                        <h2 class="title">
+                                            News Needs to Meet Its Audiences Where They Are
+                                        </h2>
+                                        <p class="mb-3">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate vero obcaecati natus adipisci necessitatibus eius, enim vel sit ad reiciendis. Enim praesentium magni delectus cum, tempore deserunt aliquid quaerat culpa nemo veritatis, iste adipisci excepturi consectetur doloribus aliquam accusantium beatae?
+                                        </p>
+                                        <div class="post-meta">
+                                            <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">Food</a></span>
+                                            <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span class="icon-star2"></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-interval="5000"> 
+                            <div class="row d-flex align-items-center">
+                                <div class="col-6 p-4">
+                                    <img class="img-fluid" src="./assets/images/big/img4.jpg" alt="Second slide">
+                                </div>
+                                <div class="col-6 p-5">
+                                    <div class="content">
+                                        <h4 class="category">
+                                            Editor's Pick
+                                        </h4>
+                                        <h2 class="title">
+                                            News Needs to Meet Its Audiences Where They Are
+                                        </h2>
+                                        <p class="mb-3">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate vero obcaecati natus adipisci necessitatibus eius, enim vel sit ad reiciendis. Enim praesentium magni delectus cum, tempore deserunt aliquid quaerat culpa nemo veritatis, iste adipisci excepturi consectetur doloribus aliquam accusantium beatae?
+                                        </p>
+                                        <div class="post-meta">
+                                            <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">Food</a></span>
+                                            <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span class="icon-star2"></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-interval="5000"> 
+                            <div class="row d-flex align-items-center">
+                                <div class="col-6 p-4">
+                                    <img class="img-fluid" src="./assets/images/big/img4.jpg" alt="Second slide">
+                                </div>
+                                <div class="col-6 p-5">
+                                    <div class="content">
+                                        <h4 class="category">
+                                            Editor's Pick
+                                        </h4>
+                                        <h2 class="title">
+                                            News Needs to Meet Its Audiences Where They Are
+                                        </h2>
+                                        <p class="mb-3">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate vero obcaecati natus adipisci necessitatibus eius, enim vel sit ad reiciendis. Enim praesentium magni delectus cum, tempore deserunt aliquid quaerat culpa nemo veritatis, iste adipisci excepturi consectetur doloribus aliquam accusantium beatae?
+                                        </p>
+                                        <div class="post-meta">
+                                            <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">Food</a></span>
+                                            <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span class="icon-star2"></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+                </div>
+            </div>
+            </div>
+        
+            <div class="site-section">
+                <div class="container">
+                    <div class="row mb-3">
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="section-title">
+                                        <h2>Editor's Pick</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="post-entry-1">
+                                        <a href="post-single.html"><img src="https://preview.colorlib.com/theme/meranda/images/img_h_1.jpg" alt="Image" class="img-fluid"></a>
+                                        <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus praesentium
+                                            neque, voluptatum quam quibusdam.</p>
+                                        <div class="post-meta">
+                                            <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
+                                            <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                                                    class="icon-star2"></span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="post-entry-2 d-flex">
+                                        <div class="thumbnail" style="background-image: url(https://preview.colorlib.com/theme/meranda/images/img_h_1.jpg)"></div>
+                                        <div class="contents">
+                                            <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
+                                            <div class="post-meta">
+                                                <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
+                                                <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                                                        class="icon-star2"></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-entry-2 d-flex">
+                                        <div class="thumbnail" style="background-image: url('./assets/images/big/img4.jpg')"></div>
+                                        <div class="contents">
+                                            <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
+                                            <div class="post-meta">
+                                                <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
+                                                <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                                                        class="icon-star2"></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="post-entry-2 d-flex">
+                                        <div class="thumbnail" style="background-image: url('./assets/images/big/img4.jpg')"></div>
+                                        <div class="contents">
+                                            <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
+                                            <div class="post-meta">
+                                                <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
+                                                <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                                                        class="icon-star2"></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="section-title">
+                                <h2>Trending</h2>
+                            </div>
+                            <div class="trend-entry d-flex">
+                                <div class="number align-self-start">01</div>
+                                <div class="trend-contents">
+                                    <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
+                                    <div class="post-meta">
+                                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
+                                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                                                class="icon-star2"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trend-entry d-flex">
+                                <div class="number align-self-start">02</div>
+                                <div class="trend-contents">
+                                    <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
+                                    <div class="post-meta">
+                                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
+                                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                                                class="icon-star2"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trend-entry d-flex">
+                                <div class="number align-self-start">03</div>
+                                <div class="trend-contents">
+                                    <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
+                                    <div class="post-meta">
+                                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
+                                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                                                class="icon-star2"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trend-entry d-flex">
+                                <div class="number align-self-start">04</div>
+                                <div class="trend-contents">
+                                    <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
+                                    <div class="post-meta">
+                                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
+                                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                                                class="icon-star2"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>
+                                <a href="#" class="more">See All Trends <span class="icon-keyboard_arrow_right"></span></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="tags mb-3">
+                <div class="container">
+                    <h3 class="sidebar-heading text-center">Tag Cloud</h3>
+                    <div class="row d-flex justify-content-center mt-4">
+                        <div class="col-5">
+                            <ul class="tagcloud text-center mt-4">
+                                <a href="#" class="tag-cloud-link">animals</a>
+                                <a href="#" class="tag-cloud-link">human</a>
+                                <a href="#" class="tag-cloud-link">people</a>
+                                <a href="#" class="tag-cloud-link">cat</a>
+                                <a href="#" class="tag-cloud-link">dog</a>
+                                <a href="#" class="tag-cloud-link">nature</a>
+                                <a href="#" class="tag-cloud-link">leaves</a>
+                                <a href="#" class="tag-cloud-link">food</a>
+                                <a href="#" class="tag-cloud-link">animals</a>
+                                <a href="#" class="tag-cloud-link">human</a>
+                                <a href="#" class="tag-cloud-link">people</a>
+                                <a href="#" class="tag-cloud-link">cat</a>
+                                <a href="#" class="tag-cloud-link">dog</a>
+                                <a href="#" class="tag-cloud-link">nature</a>
+                                <a href="#" class="tag-cloud-link">leaves</a>
+                                <a href="#" class="tag-cloud-link">food</a>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="site-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="section-title">
+                                <h2>Politics</h2>
+                            </div>
+                            <div class="post-entry-2 d-flex">
+                                <div class="thumbnail" style="background-image: url('./assets/images/big/img4.jpg')"></div>
+                                <div class="contents">
+                                    <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
+                                    <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus
+                                        praesentium neque, voluptatum quam quibusdam.</p>
+                                    <div class="post-meta">
+                                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
+                                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                                                class="icon-star2"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-entry-2 d-flex">
+                                <div class="thumbnail" style="background-image: url('./assets/images/big/img4.jpg')"></div>
+                                <div class="contents">
+                                    <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
+                                    <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus
+                                        praesentium neque, voluptatum quam quibusdam.</p>
+                                    <div class="post-meta">
+                                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
+                                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                                                class="icon-star2"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-entry-2 d-flex">
+                                <div class="thumbnail" style="background-image: url('./assets/images/big/img4.jpg')"></div>
+                                <div class="contents">
+                                    <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
+                                    <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus
+                                        praesentium neque, voluptatum quam quibusdam.</p>
+                                    <div class="post-meta">
+                                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
+                                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                                                class="icon-star2"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="section-title">
+                                <h2>Business</h2>
+                            </div>
+                            <div class="post-entry-2 d-flex">
+                                <div class="thumbnail" style="background-image: url('./assets/images/big/img4.jpg')"></div>
+                                <div class="contents">
+                                    <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
+                                    <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus
+                                        praesentium neque, voluptatum quam quibusdam.</p>
+                                    <div class="post-meta">
+                                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
+                                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                                                class="icon-star2"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-entry-2 d-flex">
+                                <div class="thumbnail" style="background-image: url('./assets/images/big/img4.jpg')"></div>
+                                <div class="contents">
+                                    <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
+                                    <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus
+                                        praesentium neque, voluptatum quam quibusdam.</p>
+                                    <div class="post-meta">
+                                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
+                                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                                                class="icon-star2"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-entry-2 d-flex">
+                                <div class="thumbnail" style="background-image: url('./assets/images/big/img4.jpg')"></div>
+                                <div class="contents">
+                                    <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
+                                    <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi temporibus
+                                        praesentium neque, voluptatum quam quibusdam.</p>
+                                    <div class="post-meta">
+                                        <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">News</a></span>
+                                        <span class="date-read">Jun 14 <span class="mx-1">•</span> 3 min read <span
+                                                class="icon-star2"></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <footer>
+            <div class="site-section bg-f8f9fa">
+                <div class="container">
+                    <form action="#" class="row align-items-center">
+                        <div class="col-md-5 mr-auto">
+                            <h2>Newsletter Subcribe</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis aspernatur ut at quae omnis
+                                pariatur obcaecati possimus nisi ea iste!</p>
+                        </div>
+                        <div class="col-md-6 ml-auto">
+                            <div class="d-flex">
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                                <button type="submit" class="btn btn-secondary"><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="copyright">
+                                <p>
+                                    Copyright ©
+                                    <script type="text/javascript" async=""
+                                        src="https://www.google-analytics.com/analytics.js"></script>
+                                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This
+                                    template is made with <i class="fas fa-heart text-danger" aria-hidden="true"></i> by <a
+                                        href="https://colorlib.com" target="_blank">Colorlib</a>
+            
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <Modal>
+        <!-- Signup modal content -->
+        <div id="signup-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+        
+                    <div class="modal-body">
+                        <div class="text-center mt-2 mb-4">
+                            <a href="index.html" class="text-success">
+                                <span><img class="mr-2" src="./assets/images/logo-icon.png" alt="" height="18"><img
+                                        src="./assets/images/logo-text.png" alt="" height="18"></span>
+                            </a>
+                        </div>
+        
+                        <form class="pl-3 pr-3" action="#">
+        
+                            <div class="form-group">
+                                <label for="username">Name</label>
+                                <input class="form-control" type="email" id="username" required="" placeholder="Michael Zenaty">
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="emailaddress">Email address</label>
+                                <input class="form-control" type="email" id="emailaddress" required=""
+                                    placeholder="john@deo.com">
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input class="form-control" type="password" required="" id="password"
+                                    placeholder="Enter your password">
+                            </div>
+        
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label" for="customCheck1">I
+                                        accept <a href="#">Terms and Conditions</a></label>
+                                </div>
+                            </div>
+        
+                            <div class="form-group text-center">
+                                <button class="btn btn-block btn-secondary" type="submit">Sign Up
+                                    Free</button>
+                            </div>
+
+                            <div class="mt-5 text-center">
+                                <span type="button" data-target="#login-modal" 
+                                data-toggle="modal" data-dismiss="modal">Already have account
+                                    <i class="ti-check"></i>
+                                </span>
+                            </div>
+        
+                        </form>
+        
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        
+        
+        <!-- SignIn modal content -->
+        <div id="login-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="text-center mt-2 mb-4">
+                            <a href="index.html" class="text-success">
+                                <span><img class="mr-2" src="./assets/images/logo-icon.png" alt="" height="18"><img
+                                        src="./assets/images/logo-text.png" alt="" height="18"></span>
+                            </a>
+                        </div>
+        
+                        <form action="#" class="pl-3 pr-3">
+        
+                            <div class="form-group">
+                                <label for="emailaddress1">Email address</label>
+                                <input class="form-control" type="email" id="emailaddress1" required=""
+                                    placeholder="john@deo.com">
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="password1">Password</label>
+                                <input class="form-control" type="password" required="" id="password1"
+                                    placeholder="Enter your password">
+                            </div>
+        
+                            <div class="form-group d-flex justify-content-between">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                    <label class="custom-control-label" for="customCheck2">Remember me</label>
+                                </div>
+                                <span type="button" data-target="#recoverform" 
+                                data-toggle="modal" data-dismiss="modal">
+                                    Forget password?
+                                </span>
+                            </div>
+        
+                            <div class="form-group text-center">
+                                <button class="btn btn-block btn-secondary" type="submit">Sign In</button>
+                            </div>
+
+                            <div class="mt-5 text-center">
+                                <span type="button" data-target="#signup-modal" 
+                                data-toggle="modal" data-dismiss="modal">Create your account 
+                                    <i class="ti-pencil-alt"></i>
+                                </span>
+                            </div>
+        
+                        </form>
+        
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <!-- Forget pwd -->
+
+        <div id="recoverform" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="text-center mt-2 mb-4">
+                            <a href="index.html" class="text-success">
+                                <span><img class="mr-2" src="./assets/images/logo-icon.png" alt="" height="18"><img
+                                        src="./assets/images/logo-text.png" alt="" height="18"></span>
+                            </a>
+                        </div>
+                        <div class="logo">
+                            <h3 class="font-weight-medium mb-3">Recover Password</h3>
+                            <span>Enter your Email and instructions will be sent to you!</span>
+                        </div>
+                        <div class="row mt-3">
+                            <!-- Form -->
+                            <form class="col-12 form-material" action="index.html">
+                                <!-- email -->
+                                <div class="form-group row">
+                                    <div class="col-12">
+                                        <input class="form-control" type="email" required="" placeholder="Your email">
+                                    </div>
+                                </div>
+                                <!-- pwd -->
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <button class="btn btn-block btn-secondary" type="submit"
+                                            name="action">Reset</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+        
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </Modal>
+
+    <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="./assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- apps -->
+    <script src="./dist/js/app.min.js"></script>
+    <script src="./dist/js/app.init.js"></script>
+    <script src="./dist/js/app-style-switcher.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="./assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="./assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <!--Wave Effects -->
+    <script src="./dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="./dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="./dist/js/feather.min.js"></script>
+    <script src="./dist/js/custom.min.js"></script>
+    <!-- ############################################################### -->
+    <!-- This Page Js Files Here -->
+    <!-- ############################################################### -->
+    <script src="./assets/libs/chartist/dist/chartist.min.js"></script>
+    <script src="./assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="./assets/libs/echarts/dist/echarts.min.js"></script>
+    <!--c3 charts -->
+    <script src="./assets/libs/d3/dist/d3.min.js"></script>
+    <script src="./assets/libs/c3/c3.min.js"></script>
+    <script src="./dist/js/pages/dashboards/dashboard1.js"></script>
+</body>
+
+</html>
