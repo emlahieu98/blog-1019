@@ -1,0 +1,286 @@
+
+body {
+    background-color: #fff;
+    line-height: 1.7;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: #649130;
+}
+
+.topbar {
+    box-shadow: none;
+}
+
+.site-logo {
+    color: black;
+    font-size: 30px;
+}
+
+.app-search {
+    margin-left: 16px;
+}
+
+.nav-item {
+    font-size: 17px;
+}
+
+.nav-item .nav-link.active span {
+    border-bottom: 1px solid black;
+}
+
+.app-search input {
+    width: 200px;
+    font-size: 14px;
+    transition: .5s ease-in;
+    box-shadow: 1px 0 4px;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.app-search .srh-btn {
+    right: 18px;
+}
+
+.post-entry-2 .thumbnail {
+    background-size: cover;
+    background-position: center;
+    width: 30%;
+}
+
+.section-title {
+    color: #000;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 20px;
+    font-weight: 400;
+    border-bottom: 1px solid #222;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h2:before {
+    position: absolute;
+    content: "";
+    height: 1px;
+    background: #777;
+}
+
+.post-entry-1, .post-entry-2 {
+    font-size: .9rem;
+    margin-bottom: 30px;
+}
+
+.post-entry-1 img, .post-entry-2 img {
+    margin-bottom: 30px;
+}
+
+.post-entry-1 h2, .post-entry-2 h2 {
+    font-size: 20px;
+}
+
+.date-read {
+    color: #b4b4b4;
+}
+
+.post-entry-2 .contents {
+    width: 70%;
+    padding: 10px 20px;
+}
+
+.post-entry-2 .contents h2 {
+    font-size: 15px;
+}
+
+.post-meta {
+    font-size: .8rem;
+}
+
+.trend-entry {
+    margin-bottom: 30px;
+}
+
+.trend-entry .number {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50px;
+    flex: 0 0 50px;
+    font-size: 30px;
+    line-height: 1;
+    color: #ccc;
+}
+
+.trend-entry .trend-contents h2 {
+    font-size: 18px;
+}
+
+.cl-8bc34a{
+    color: #8bc34a;
+}
+
+.more {
+    color: #8bc34a;
+    text-transform: uppercase;
+    font-size: .85rem;
+}
+
+.tagcloud a {
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 4px 10px;
+    margin-bottom: 7px;
+    margin-right: 4px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+}
+
+.site-section {
+    padding: 5em 0;
+}
+
+.bg-f8f9fa {
+    background-color: #f8f9fa;
+}
+
+.subscribe form h2 {
+    font-size: 1.2rem;
+    color: #000;
+}
+
+.subscribe form p {
+    font-size: .9rem;
+}
+
+.subscribe form .form-control {
+    margin-right: 10px;
+    height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 30px;
+    border: none;
+    background: #fff;
+    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid #ccc;
+}
+
+.subscribe form .btn {
+    border-radius: 30px;
+    background: #000;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-color: #000;
+}
+
+.footer {
+    font-size: .85rem;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.single-content {
+    font-size: .9rem;
+}
+
+form label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    margin-right: 10px;
+    height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 30px;
+    border: none;
+    background: #fff;
+    border-bottom: 1px solid transparent;
+    border-bottom: 1px solid #ccc;
+}
+
+.btn {
+    border-radius: 30px;
+    background: #000;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: .2rem;
+}
+
+.bio-pic {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 40px;
+    flex: 0 0 40px;
+}
+
+.bio-pic img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.comment-list {
+    padding: 0;
+    margin: 0;
+}
+
+.comment-list li {
+    padding: 0;
+    margin: 0 0 30px;
+    float: left;
+    width: 100%;
+    clear: both;
+    list-style: none;
+}
+
+.comment-list li .vcard {
+    width: 80px;
+    float: left;
+}
+
+.comment-list li .vcard img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.comment-list li .comment-body {
+    float: right;
+    width: calc(100% - 80px);
+}
+
+.comment-list li .comment-body h3 {
+    font-size: 18px;
+    color: #000;
+}
+
+.comment-list li .comment-body .meta {
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: .1em;
+    color: #ccc;
+}
+
+.comment-list li .comment-body .reply {
+    padding: 5px 10px;
+    background: #e6e6e6;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.comment-list .children {
+    padding: 50px 0 0 40px;
+    margin: 0;
+    float: left;
+    width: 100%;
+}
