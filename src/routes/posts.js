@@ -1,9 +1,8 @@
-var express = require('express');
-var router = express.Router();
+const express = require("express");
+const controller = require("../controllers/post");
+const router = express.Router();
 
-/* GET posts listing. */
-router.get('/', function(req, res, next) {
-  res.send('POST');
-});
+/* GET POST page. */
+router.get("/", controller.index);
 
 module.exports = router;
