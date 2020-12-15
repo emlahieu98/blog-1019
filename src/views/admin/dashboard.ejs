@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+    <%- include('./layouts/head'); -%>
+
+<body>
+    <%- include('./layouts/header'); -%>
+    <%- include('./layouts/leftSide'); -%>
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-md-5 align-self-center">
+                        <h4 class="page-title">Dashboard</h4>
+                        <div class="d-flex align-items-center">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                                    <li class="breadcrumb-item active">Dashboard</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-md-7 d-flex justify-content-end align-self-center d-none d-md-flex">
+                        <div class="d-flex">
+                            <div class="dropdown mr-2 hidden-sm-down">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> January 2020
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"> <a
+                                        class="dropdown-item" href="#">February 2020</a> <a class="dropdown-item"
+                                        href="#">March 2020</a> <a class="dropdown-item" href="#">April 2020</a> </div>
+                            </div>
+                            <button class="btn btn-success"><i class="mdi mdi-plus-circle"></i> Create</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- Row -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <!-- Row -->
+                                <div class="row">
+                                    <div class="col-8"><span class="display-6">2376 <i
+                                                class="ti-angle-down font-14 text-danger"></i></span>
+                                        <h6>Total Visits</h6>
+                                    </div>
+                                    <div class="col-4 align-self-center text-right  pl-0">
+                                        <div id="sparklinedash3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <!-- Row -->
+                                <div class="row">
+                                    <div class="col-8"><span class="display-6">3670 <i
+                                                class="ti-angle-up font-14 text-success"></i></span>
+                                        <h6>Page Views</h6>
+                                    </div>
+                                    <div class="col-4 align-self-center text-right pl-0">
+                                        <div id="sparklinedash"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <!-- Row -->
+                                <div class="row">
+                                    <div class="col-8"><span class="display-6">1562 <i
+                                                class="ti-angle-up font-14 text-success"></i></span>
+                                        <h6>Unique Visits</h6>
+                                    </div>
+                                    <div class="col-4 align-self-center text-right pl-0">
+                                        <div id="sparklinedash2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <!-- Row -->
+                                <div class="row">
+                                    <div class="col-8"><span class="display-6">35% <i
+                                                class="ti-angle-down font-14 text-danger"></i></span>
+                                        <h6>Bounce Rate</h6>
+                                    </div>
+                                    <div class="col-4 align-self-center text-right pl-0">
+                                        <div id="sparklinedash4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row -->
+                <!-- Row -->
+                <div class="row">
+                    <!-- Column -->
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-md-flex align-items-center">
+                                    <h4 class="card-title">Total Revenue</h4>
+                                    <div class="ml-auto">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <h6 class="text-muted"><i class="fa fa-circle mr-1"
+                                                        style="color:#51bdff"></i>2015</h6>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <h6 class="text-muted"><i class="fa fa-circle mr-1"
+                                                        style="color:#11a0f8"></i>2016</h6>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <h6 class="text-muted"><i class="fa fa-circle mr-1 text-info"></i>2020
+                                                </h6>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="total-sales" style="height: 359px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                    <div class="col-lg-4">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Sales Prediction</h4>
+                                        <div class="row">
+                                            <div class="col-5 col-md-6 align-self-center">
+                                                <span class="display-6 text-primary text-truncate d-block">$3528</span>
+                                                <h6 class="text-muted text-truncate">10% Increased</h6>
+                                                <h5 class="text-truncate">(150-165 Sales)</h5>
+                                            </div>
+                                            <div class="col-7 col-md-6 d-flex justify-content-end">
+                                                <div id="gauge-chart" style=" width:150px; height:150px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Sales Difference</h4>
+                                        <div class="row">
+                                            <div class="col-5 col-md-6 align-self-center">
+                                                <span class="display-6 text-success text-truncate d-block">$4316</span>
+                                                <h6 class="text-muted text-truncate">10% Increased</h6>
+                                                <h5 class="text-truncate">(150-165 Sales)</h5>
+                                            </div>
+                                            <div class="col-7 col-md-6 d-flex justify-content-end">
+                                                <div class="ct-chart" style="width:120px; height: 120px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Column -->
+                </div>
+                <!-- Row -->
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Total Visits</h4>
+                                <div id="visitfromworld" style="width:100%!important; height:415px"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Browser Stats</h4>
+                                <div class="table-responsive">
+                                    <table class="table browser mt-4 table-borderless no-wrap">
+                                        <tbody>
+                                            <tr>
+                                                <td style="width:40px"><img
+                                                        src="./assets/images/browser/chrome-logo.png" alt=logo /></td>
+                                                <td>Google Chrome</td>
+                                                <td class="text-right"><span
+                                                        class="badge badge-light-info text-info">23%</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="./assets/images/browser/firefox-logo.png" alt=logo />
+                                                </td>
+                                                <td>Mozila Firefox</td>
+                                                <td class="text-right"><span
+                                                        class="badge badge-light-success text-success">15%</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="./assets/images/browser/safari-logo.png" alt=logo /></td>
+                                                <td>Apple Safari</td>
+                                                <td class="text-right"><span
+                                                        class="badge badge-light-primary text-primary">07%</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="./assets/images/browser/internet-logo.png" alt=logo />
+                                                </td>
+                                                <td>Internet Explorer</td>
+                                                <td class="text-right"><span
+                                                        class="badge badge-light-warning text-warning">09%</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="./assets/images/browser/opera-logo.png" alt=logo /></td>
+                                                <td>Opera mini</td>
+                                                <td class="text-right"><span
+                                                        class="badge badge-light-danger text-danger">23%</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><img src="./assets/images/browser/internet-logo.png" alt=logo />
+                                                </td>
+                                                <td>Microsoft edge</td>
+                                                <td class="text-right"><span
+                                                        class="badge badge-light-megna text-megna">09%</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <%- include('./layouts/footer'); -%>
+            
+</body>
+
+</html>

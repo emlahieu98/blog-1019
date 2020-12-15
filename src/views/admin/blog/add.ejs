@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+    <%- include('../layouts/head'); -%>
+
+<body>
+    <%- include('../layouts/header'); -%>
+    <%- include('../layouts/leftSide'); -%>
+
+    <div class="page-wrapper">
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- Row -->
+            <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                <h2 class="mb-0">All Blog</h2>
+            </div>
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                  <a href="" class="btn btn-success">
+                    <i class="glyphicon glyphicon-plus"></i> Add Blog
+                  </a>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <form id="form-add-room" novalidate="novalidate">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Title</label>
+                                                <input id="name" name="name" class="form-control" placeholder="">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Category</label>
+                                                <select id="type" name="type" class="form-control">
+                                                    <option value="code" selected="">Code</option>
+                                                    <option value="life">Life</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Tags</label>
+                                                <input id="size" name="size" type="number" min="0" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Image</label>
+                                                <input id="image" required="" name="image" type="file">
+                                                <br>
+                                                <div>
+                                                    <img height="150" id="img_pview"
+                                                        src="https://preview.colorlib.com/theme/meranda/images/big_img_1.jpg">
+                                                </div>
+                                            </div>
+                                            <button id="btn-add-room" name="btn-add-room" type="submit" class="btn btn-success">
+                                                Add
+                                            </button>
+                                            <button type="reset" class="btn btn-default">Refresh</button>
+                                        </div>
+                
+                                        <div class="col-md-6 pt-3">
+                                            <div class="form-group">
+                                                <label>Content</label>
+                                                <textarea cols="80" id="blogContent" name="blogContent" rows="10" data-sample="3"
+                                                    data-sample-short></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.col-->
+                </div>
+              </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+
+    <%- include('../layouts/footer'); -%>
+            
+</body>
+
+</html>
