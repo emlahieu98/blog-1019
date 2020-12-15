@@ -39,6 +39,11 @@ const PostSchema = new mongoose.Schema(
         ref: "comments",
       },
     ],
+    categoryId: 
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "categories",
+      },
   },
   {
     versionKey: false,
