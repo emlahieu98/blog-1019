@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b278072-6ff5-45ad-84ba-eacf16da3498" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/public/uploads/images/posts/1608093243215-img_avatar2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/images/posts/1608093505126-img_avatar2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/images/posts/1608093540024-img_avatar2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/images/posts/1608093573098-img_avatar2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/layouts/footer.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/layouts/footer.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/admin/posts/add.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/admin/posts/add.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,15 +13,24 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ljDUSxTaJXqDkWdunu9lDj2G0S" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -39,7 +42,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1608101624678</updated>
-      <workItem from="1608101641948" duration="1073000" />
+      <workItem from="1608101641948" duration="2129000" />
     </task>
     <servers />
   </component>
@@ -56,5 +59,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

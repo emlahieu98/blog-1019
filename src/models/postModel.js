@@ -19,7 +19,7 @@ const PostSchema = new mongoose.Schema(
       unique: true,
     },
     image: { type: String, default: "avatar.jpg" },
-    imageContent: { type: String, default: "avatar.jpg" },
+    imageContent: [{ type: String, default: "avatar.jpg" }],
     status: {
       type: String,
       enum: ["waiting", "approved", "success", "fail"],

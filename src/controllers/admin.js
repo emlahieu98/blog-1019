@@ -15,7 +15,7 @@ const upload = multer({
   limits: {
     fileSize: 5 * 1024 * 1024, // limit file max 5MB
   },
-}).single('image')
+}).array('files')
 exports.admin = async (req, res) => {
   try {
     res.render("admin/dashboard");
@@ -26,7 +26,6 @@ exports.admin = async (req, res) => {
     });
   }
 };
-
 exports.post = async (req, res) => {
   try {
     res.render("admin/posts/index");
@@ -56,13 +55,16 @@ exports.p_addPost= async(req, res) => {
       } else if (err) {
         res.json("Lỗi server quá tải , vui lòng đợi 1 lát");
       }
-    const file = req.file;
+      const file = req.files.map( file => file.originalname)
       const newPost = new postModel({
         title: req.body.title,
         content: req.body.content,
         tags:[],
-      image: file.filename,
+        image: file.filename,
+        imageContent: []
     });
+      newPost.imageContent = file;
+      console.log(newPost)
      }) 
   } catch (error) {
     return res.status(400).json({

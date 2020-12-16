@@ -25,7 +25,7 @@
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <form id="form-add-room" action="/admin/post/add" enctype="multipart/form-data" method="post" novalidate="novalidate">
+                                <form id="form-add-room"  enctype="multipart/form-data" method="post" novalidate="novalidate">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
@@ -77,17 +77,30 @@
         </div>
     <%- include('../layouts/footer'); -%>
         <script>
-            $(`.summernote`).summernote({
-                height: 350, // set editor height
-                minHeight: null, // set minimum height of editor
-                maxHeight: null, // set maximum height of editor
-                focus: false // set focus to editable area after initializing
-            });
-            $('.inline-editor').summernote({
-                airMode: true
-            });
-            $('.airmode-summer').summernote({
-                airMode: true
+            $(document).ready(function() {
+                $('.summernote').summernote({
+                    height: 500,
+                    onImageUpload: function(files, editor, welEditable) {
+                        sendFile(files, editor, welEditable);
+                    }
+                });
+
+                function sendFile(file, editor, welEditable) {
+                    data = new FormData();
+                    data.append("file", file);
+                    $.ajax({
+                        data: data,
+                        type: "POST",
+                        url: "/admin/post/add",
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        success: function(url) {
+                            editor.insertImage(welEditable, url);
+                           // arlet("up load ok")
+                        }
+                    });
+                }
             });
         </script>
 </div>
