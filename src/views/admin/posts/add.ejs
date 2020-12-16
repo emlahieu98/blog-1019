@@ -25,16 +25,16 @@
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <form id="form-add-room" novalidate="novalidate">
+                                <form id="form-add-room" action="/admin/post/add" enctype="multipart/form-data" method="post" novalidate="novalidate">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Title</label>
-                                                <input id="name" name="name" class="form-control" placeholder="">
+                                                <input id="title" name="title" class="form-control" placeholder="">
                                             </div>
                                             <div class="form-group">
                                                 <label>Category</label>
-                                                <select id="type" name="type" class="form-control">
+                                                <select id="categoryId" name="categoryId" class="form-control">
                                                     <option value="code" selected="">Code</option>
                                                     <option value="life">Life</option>
                                                 </select>
@@ -46,23 +46,24 @@
                                             <div class="form-group">
                                                 <label>Image</label>
                                                 <input id="image" required="" name="image" type="file">
-                                                <br>
-                                                <div>
-                                                    <img height="150" id="img_pview"
+                                                <div class="mt-3">
+                                                    <img height="150px" id="img_pview"
                                                         src="https://preview.colorlib.com/theme/meranda/images/big_img_1.jpg">
                                                 </div>
                                             </div>
+                                            <div class="mt-3">
                                             <button id="btn-add-room" name="btn-add-room" type="submit" class="btn btn-success">
                                                 Add
                                             </button>
                                             <button type="reset" class="btn btn-default">Refresh</button>
+                                            </div>
                                         </div>
                 
                                         <div class="col-md-6 pt-3">
                                             <div class="form-group">
                                                 <label>Content</label>
-                                            <div class="summernote" style="display: none;">
-                                            </div>
+                                            <textarea name="content" id="content" class="summernote" style="display: none;">
+                                            </textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -74,26 +75,22 @@
                 </div>
               </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- End Container fluid  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-
     <%- include('../layouts/footer'); -%>
-     <script>
-        $('.summernote').summernote({
-            height: 350, // set editor height
-            minHeight: null, // set minimum height of editor
-            maxHeight: null, // set maximum height of editor
-            focus: false // set focus to editable area after initializing
-        });
-        $('.inline-editor').summernote({
-            airMode: true
-        });
-        $('.airmode-summer').summernote({
-            airMode: true
-        });
-    </script>      
+        <script>
+            $(`.summernote`).summernote({
+                height: 350, // set editor height
+                minHeight: null, // set minimum height of editor
+                maxHeight: null, // set maximum height of editor
+                focus: false // set focus to editable area after initializing
+            });
+            $('.inline-editor').summernote({
+                airMode: true
+            });
+            $('.airmode-summer').summernote({
+                airMode: true
+            });
+        </script>
+</div>
 </body>
 
 </html>

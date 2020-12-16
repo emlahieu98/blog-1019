@@ -41,7 +41,6 @@ exports.post = async (req, res) => {
 exports.addPost = async (req, res) => {
   try {
     res.render("admin/posts/add");
-    //const categories = await categoryModel.find();
   } catch (error) {
     return res.status(400).json({
       status: "fail",
@@ -51,8 +50,6 @@ exports.addPost = async (req, res) => {
 };
 exports.p_addPost= async(req, res) => {
   try {
-    const { title, image, imageContent, content, tags } = req.body;
-    console.log(req.body);
     upload(req, res,  function (err) {
       if (err instanceof multer.MulterError) {
         res.json("Lỗi định dạng, vui lòng xem lại ảnh");
@@ -61,12 +58,11 @@ exports.p_addPost= async(req, res) => {
       }
     const file = req.file;
       const newPost = new postModel({
-        title:title,
-        content:content,
+        title: req.body.title,
+        content: req.body.content,
         tags:[],
       image: file.filename,
     });
-    console.log(newPost);
      }) 
   } catch (error) {
     return res.status(400).json({
