@@ -25,7 +25,7 @@
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <form id="form-add-room"  enctype="multipart/form-data" method="post" novalidate="novalidate">
+                                <form id="form-add-room" enctype="multipart/form-data"  novalidate="novalidate">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
@@ -52,7 +52,7 @@
                                                 </div>
                                             </div>
                                             <div class="mt-3">
-                                            <button id="btn-add-room" name="btn-add-room" type="submit" class="btn btn-success">
+                                            <button id="btn-add-post" name="btn-add-post" type="button" class="btn btn-success">
                                                 Add
                                             </button>
                                             <button type="reset" class="btn btn-default">Refresh</button>
@@ -76,31 +76,60 @@
               </div>
         </div>
     <%- include('../layouts/footer'); -%>
-        <script>
-            $(document).ready(function() {
-                $('.summernote').summernote({
-                    height: 500,
-                    onImageUpload: function(files, editor, welEditable) {
-                        sendFile(files, editor, welEditable);
-                    }
-                });
+<!--        <script>-->
+<!--            $(document).ready(function() {-->
+<!--                $('.summernote').summernote({-->
+<!--                    height: 500,-->
+<!--                    onImageUpload: function(files, editor, welEditable) {-->
+<!--                        sendFile(files, editor, welEditable);-->
+<!--                    }-->
+<!--                });-->
 
-                function sendFile(file, editor, welEditable) {
-                    data = new FormData();
-                    data.append("file", file);
-                    $.ajax({
-                        data: data,
-                        type: "POST",
-                        url: "/admin/post/add",
-                        cache: false,
-                        contentType: false,
-                        processData: false,
-                        success: function(url) {
-                            editor.insertImage(welEditable, url);
-                           // arlet("up load ok")
-                        }
-                    });
-                }
+<!--                function sendFile(file, editor, welEditable) {-->
+<!--                    data = new FormData();-->
+<!--                    data.append("file", file);-->
+<!--                    $.ajax({-->
+<!--                        data: data,-->
+<!--                        type: "POST",-->
+<!--                        url: "/admin/post/add",-->
+<!--                        cache: false,-->
+<!--                        contentType: false,-->
+<!--                        processData: false,-->
+<!--                        success: function(url) {-->
+<!--                            editor.insertImage(welEditable, url);-->
+<!--                           // arlet("up load ok")-->
+<!--                        }-->
+<!--                    });-->
+<!--                }-->
+<!--            });-->
+<!--        </script>-->
+        <script>
+            //xử lý khi có sự kiện click
+            $('#btn-add-post').on('click', function () {
+                    var fd = new FormData();
+                    var files = $('#image')[0].files;
+                    // Check file selected or not
+                    if(files.length > 0 ){
+                        fd.append('image',files[0]);
+
+                        $.ajax({
+                            url: '/admin/post/add',
+                            type: 'post',
+                            data: fd,
+                            contentType: false,
+                            processData: false,
+                            success: function(response){
+                                if(response != 0){
+                                    $("#img").attr("src",response);
+                                    $(".preview img").show(); // Display image element
+                                }else{
+                                    alert('file not uploaded');
+                                }
+                            },
+                        });
+                    }else{
+                        alert("Please select a file.");
+                    }
             });
         </script>
 </div>

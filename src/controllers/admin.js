@@ -10,12 +10,18 @@ const storage = multer.diskStorage({
     cb(null, Date.now() + "-" + file.originalname);
   },
 });
+// const upload = multer({
+//   storage: storage,
+//   limits: {
+//     fileSize: 5 * 1024 * 1024, // limit file max 5MB
+//   },
+// }).array('files')
 const upload = multer({
   storage: storage,
   limits: {
     fileSize: 5 * 1024 * 1024, // limit file max 5MB
   },
-}).array('files')
+}).single('image')
 exports.admin = async (req, res) => {
   try {
     res.render("admin/dashboard");
@@ -47,29 +53,28 @@ exports.addPost = async (req, res) => {
     });
   }
 };
-exports.p_addPost= async(req, res) => {
+exports.p_addPost= async (req, res) => {
   try {
-    upload(req, res,  function (err) {
+     upload(req, res, async function (err) {
+       console.log(req.file)
       if (err instanceof multer.MulterError) {
         res.json("Lỗi định dạng, vui lòng xem lại ảnh");
       } else if (err) {
         res.json("Lỗi server quá tải , vui lòng đợi 1 lát");
       }
-      const file = req.files.map( file => file.originalname)
-      const newPost = new postModel({
-        title: req.body.title,
-        content: req.body.content,
-        tags:[],
-        image: file.filename,
-        imageContent: []
+    const newPost = new postModel({
+      image: req.file.filename,
+    //  newPost.imageContent = file;
+    //  console.log(newPost)
+     })
+    console.log('newPost', newPost)
+    newPost.save()
     });
-      newPost.imageContent = file;
-      console.log(newPost)
-     }) 
   } catch (error) {
-    return res.status(400).json({
-      status: "fail",
-      message: transValidation.input_incorrect,
-    });
+    console.log(error.message)
+    // return res.status(400).json({
+    //   status: "fail",
+    //  message: transValidation.input_incorrect,
+    // });
   }
 };

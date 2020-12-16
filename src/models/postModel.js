@@ -3,11 +3,11 @@ const mongoosePaginate = require("mongoose-paginate-v2");
 const slug = require("mongoose-slug-generator");
 const PostSchema = new mongoose.Schema(
   {
-    Owner: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      ref: "account",
-    },
+    // Owner: {
+    //   type: mongoose.Schema.Types.ObjectId,
+    //   required: true,
+    //   ref: "account",
+    // },
     title: {
       type: String,
       unique: true,
