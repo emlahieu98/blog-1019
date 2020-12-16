@@ -19,6 +19,7 @@ const PostSchema = new mongoose.Schema(
       unique: true,
     },
     image: { type: String, default: "avatar.jpg" },
+    imageContent: { type: String, default: "avatar.jpg" },
     status: {
       type: String,
       enum: ["waiting", "approved", "success", "fail"],
@@ -31,6 +32,7 @@ const PostSchema = new mongoose.Schema(
     tags: [
       {
         type: String,
+        default: "#coder",
       },
     ],
     commentId: [
@@ -39,11 +41,10 @@ const PostSchema = new mongoose.Schema(
         ref: "comments",
       },
     ],
-    categoryId: 
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "categories",
-      },
+    categoryId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "categories",
+    },
   },
   {
     versionKey: false,

@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 const indexRouter = require('./src/routes/index');
-const postsRouter = require('./src/routes/posts');
+const adminRouter = require("./src/routes/admin");
 
 const app = express();
 
@@ -19,11 +19,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/posts', postsRouter);
-
-
 app.use("/", require("./src/routes"));
+app.use('/', indexRouter);
+app.use("/admin", adminRouter);
 app.use("*", (req, res) => {
   return res.json("404 NOT FOUND");
 });

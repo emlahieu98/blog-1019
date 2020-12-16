@@ -41,7 +41,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Tags</label>
-                                                <input id="size" name="size" type="number" min="0" class="form-control">
+                                                <input id="tags" name="tags" type="text" class="form-control">
                                             </div>
                                             <div class="form-group">
                                                 <label>Image</label>
@@ -61,8 +61,8 @@
                                         <div class="col-md-6 pt-3">
                                             <div class="form-group">
                                                 <label>Content</label>
-                                                <textarea cols="80" id="blogContent" name="blogContent" rows="10" data-sample="3"
-                                                    data-sample-short></textarea>
+                                            <div class="summernote" style="display: none;">
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
@@ -80,7 +80,20 @@
         <!-- ============================================================== -->
 
     <%- include('../layouts/footer'); -%>
-            
+     <script>
+        $('.summernote').summernote({
+            height: 350, // set editor height
+            minHeight: null, // set minimum height of editor
+            maxHeight: null, // set maximum height of editor
+            focus: false // set focus to editable area after initializing
+        });
+        $('.inline-editor').summernote({
+            airMode: true
+        });
+        $('.airmode-summer').summernote({
+            airMode: true
+        });
+    </script>      
 </body>
 
 </html>
