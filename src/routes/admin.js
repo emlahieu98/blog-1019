@@ -15,6 +15,6 @@ router
 router
     .route("/post/edit-:id")
     .get(adminController.editPost)
-//    .post(adminController.p_editPost);
+    .post(adminController.p_editPost);
 
 module.exports = router;
