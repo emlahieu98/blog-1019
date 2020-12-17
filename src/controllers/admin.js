@@ -92,6 +92,29 @@ exports.editPost = async (req, res) => {
     });
   }
 };
+
+
+
+exports.comments = async (req, res) => {
+  try {
+    res.render("admin/comments/index");
+  } catch (error) {
+    return res.status(400).json({
+      status: "fail",
+      message: transValidation.server_incorrect,
+    });
+  }
+};
+
+exports.profile = async (req, res) => {
+  try {
+    res.render("admin/profile/index");
+  } catch (error) {
+    return res.status(400).json({
+      status: "fail",
+      message: transValidation.server_incorrect,
+    });
+
 exports.p_editPost= async (req, res) => {
   try {
     const { id } = req.params;
@@ -124,5 +147,6 @@ exports.p_editPost= async (req, res) => {
     //   status: "fail",
     //  message: transValidation.server_incorrect,
     // });
+
   }
 };

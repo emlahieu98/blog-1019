@@ -17,4 +17,10 @@ router
     .get(adminController.editPost)
     .post(adminController.p_editPost);
 
+/* GET COMMENT MANAGER. */
+router.get("/comments", adminController.comments);
+
+/* GET PROFILE MANAGER. */
+router.get("/profile", adminController.profile);
+
 module.exports = router;

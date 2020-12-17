@@ -284,3 +284,7 @@ form label {
     float: left;
     width: 100%;
 }
+
+.no-after::after {
+    content: none !important;
+}
