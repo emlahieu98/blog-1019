@@ -11,12 +11,12 @@ const storage = multer.diskStorage({
     cb(null, Date.now() + "-" + file.originalname);
   },
 });
-// const upload = multer({
-//   storage: storage,
-//   limits: {
-//     fileSize: 5 * 1024 * 1024, // limit file max 5MB
-//   },
-// }).array('files')
+const uploadMany = multer({
+  storage: storage,
+  limits: {
+    fileSize: 5 * 1024 * 1024, // limit file max 5MB
+  },
+}).array('files')
 const upload = multer({
   storage: storage,
   limits: {
@@ -57,37 +57,34 @@ exports.addPost = async (req, res) => {
 exports.p_addPost= async (req, res) => {
   try {
      upload(req, res, async function (err) {
-       console.log(req.file)
-      if (err instanceof multer.MulterError) {
-        res.json("Lỗi định dạng, vui lòng xem lại ảnh");
-      } else if (err) {
-        res.json("Lỗi server quá tải , vui lòng đợi 1 lát");
-      }
+       if (err instanceof multer.MulterError) {
+         return res.status(400).json({
+           status: "fail",
+           message: transValidation.upload_incorrect,
+         });
+       }
     const newPost = new postModel({
       image: req.file.filename,
-    //  newPost.imageContent = file;
-    //  console.log(newPost)
      })
-    //console.log('newPost', newPost)
      newPost.save()
        return res.status(200).json({
          status: "success",
          newPost: newPost,
-         message: 'ok1',
        });
     });
   } catch (error) {
-    console.log(error.message)
-    // return res.status(400).json({
-    //   status: "fail",
-    //  message: transValidation.server_incorrect,
-    // });
+    return res.status(400).json({
+      status: "fail",
+     message: transValidation.server_incorrect,
+    });
   }
 };
 
 exports.editPost = async (req, res) => {
   try {
-    res.json('ok')
+    const {id} = req.params;
+    const post = await postModel.findOne({_id:id})
+    res.render("admin/posts/edit", {post});
   } catch (error) {
     return res.status(400).json({
       status: "fail",
@@ -95,6 +92,7 @@ exports.editPost = async (req, res) => {
     });
   }
 };
+
 
 
 exports.comments = async (req, res) => {
@@ -116,5 +114,39 @@ exports.profile = async (req, res) => {
       status: "fail",
       message: transValidation.server_incorrect,
     });
+
+exports.p_editPost= async (req, res) => {
+  try {
+    const { id } = req.params;
+    uploadMany(req, res, async function (err) {
+      // room not choose file to edit
+      if (!req.files) {
+        await postModel.updateOne({ _id: id }, updatePost);
+      } else {
+        if (err instanceof multer.MulterError) {
+          res.json("Lỗi định dạng, vui lòng xem lại ảnh");
+        } else if (err) {
+          res.json("Lỗi server quá tải , vui lòng đợi 1 lát");
+        }
+        let updatePost = {
+          title: req.body.title,
+          categoryId: req.body.categoryId,
+          tags: [],
+          content: req.body.content,
+        };
+        let arrImageContent = req.files.map(item => item.filename)
+        updatePost.imageContent = arrImageContent
+        console.log(updatePost)
+        await postModel.updateOne({ _id: id }, updatePost);
+        res.json('update ok')
+      }
+    });
+  } catch (error) {
+    console.log(error.message)
+    // return res.status(400).json({
+    //   status: "fail",
+    //  message: transValidation.server_incorrect,
+    // });
+
   }
 };

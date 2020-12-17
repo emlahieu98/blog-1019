@@ -15,7 +15,7 @@ router
 router
     .route("/post/edit-:id")
     .get(adminController.editPost)
-//    .post(adminController.p_editPost);
+    .post(adminController.p_editPost);
 
 /* GET COMMENT MANAGER. */
 router.get("/comments", adminController.comments);
