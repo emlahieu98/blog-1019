@@ -12,23 +12,26 @@
                         </a>
                     </div>
     
-                    <form class="pl-3 pr-3" action="#">
+                    <form id="form-register" class="pl-3 pr-3">
     
                         <div class="form-group">
                             <label for="username">Name</label>
-                            <input class="form-control" type="email" id="username" required="" placeholder="Michael Zenaty">
+                            <input class="form-control" type="text" id="fullNameR" name="fullNameR">
                         </div>
     
                         <div class="form-group">
                             <label for="emailaddress">Email address</label>
-                            <input class="form-control" type="email" id="emailaddress" required=""
-                                placeholder="john@deo.com">
+                            <input class="form-control" type="text" id="emailR" name="emailR">
                         </div>
     
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input class="form-control" type="password" required="" id="password"
-                                placeholder="Enter your password">
+                            <input class="form-control" type="password" id="passwordR" name="passwordR">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm_password">Confirm Password</label>
+                            <input class="form-control" type="password" id="confirm_password" name="confirm_password">
                         </div>
     
                         <div class="form-group">
@@ -40,7 +43,7 @@
                         </div>
     
                         <div class="form-group text-center">
-                            <button class="btn btn-block btn-secondary" type="submit">Sign Up
+                            <button class="btn btn-block btn-secondary" type="button" id="btn-register">Sign Up
                                 Free</button>
                         </div>
 
@@ -71,18 +74,16 @@
                         </a>
                     </div>
     
-                    <form action="#" class="pl-3 pr-3">
+                    <form id="form-login" class="pl-3 pr-3">
     
                         <div class="form-group">
                             <label for="emailaddress1">Email address</label>
-                            <input class="form-control" type="email" id="emailaddress1" required=""
-                                placeholder="john@deo.com">
+                            <input class="form-control" type="text" id="emailL" name="emailL">
                         </div>
     
                         <div class="form-group">
                             <label for="password1">Password</label>
-                            <input class="form-control" type="password" required="" id="password1"
-                                placeholder="Enter your password">
+                            <input class="form-control" type="password" id="passwordL" name="passwordL">
                         </div>
     
                         <div class="form-group d-flex justify-content-between">
@@ -97,11 +98,11 @@
                         </div>
     
                         <div class="form-group text-center">
-                            <button class="btn btn-block btn-secondary" type="submit">Sign In</button>
+                            <button class="btn btn-block btn-secondary" type="button" id="btn-login">Sign In</button>
                         </div>
 
                         <div class="mt-5 text-center">
-                            <span type="button" data-target="#signup-modal" 
+                            <span type="button" data-target="#signup-modal"
                             data-toggle="modal" data-dismiss="modal">Create your account 
                                 <i class="ti-pencil-alt"></i>
                             </span>
@@ -154,3 +155,105 @@
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 </Modal>
+
+<script src="./assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="jquery-validation-1.19.2/forder/jquery.validate.js"></script>
+<script>
+    $(document).ready(function () {
+        // post Register
+            $("#form-register").validate({
+                rules: {
+                    emailR: {
+                        required: true,
+                        email: true
+                    },
+                    fullNameR: { required: true },
+                    passwordR: { required: true, minlength: 6 },
+                    confirm_password: { required: true, equalTo: "#passwordR" },
+                },
+                messages: {
+                    emailR: { required: "*Email is not empty.", email: '*Please enter a valid email address.' },
+                    fullNameR: { required: "*Full name is not empty." },
+                    passwordR: { required: "*Password is not empty.", minlength: "*Password must be have at least 6 characters." },
+                    confirm_password: {
+                        required: "*Confirm password is not empty.",
+                        equalTo: "*Two password must be equal."
+                    },
+                }
+            })
+            $("#btn-register").click(function () {
+                var email = $("#emailR").val();
+                var password = $("#passwordR").val();
+                var fullName = $("#fullNameR").val();
+                if ($("#form-register").valid()) {
+                    $.ajax({
+                        url: "/auth/register",
+                        method: "POST",
+                        data: {
+                            email: email,
+                            password: password,
+                            fullName: fullName,
+                        }
+                    }).then(function (data) {
+                        alertify.success(data.message);
+                        $('#signup-modal').modal('hide');
+                        $('#login-modal').modal('show');
+                    }).catch(function (err) {
+                        alertify.error(err.responseJSON.message);
+                    })
+                }
+            })
+
+            //post Login
+            $("#form-login").validate({
+                rules: {
+                    emailL: {
+                        required: true,
+                    },
+                    passwordL: { required: true, minlength: 6 },
+                },
+                messages: {
+                    emailL: { required: "*Email is not empty."},
+                    passwordL: { required: "*Password is not empty."},
+                }
+            })
+            $("#btn-login").click(function () {
+                var email = $("#emailL").val();
+                var password = $("#passwordL").val();
+                if ($("#form-register").valid()) {
+                    $.ajax({
+                        url: "/auth/login",
+                        method: "POST",
+                        data: {
+                            email: email,
+                            password: password,
+                        }
+                    }).then(function (data) {
+                        alertify.success(data.message);
+                        // Set a cookie
+                        Cookies.set('token', data.token);
+                        if (data.role === "user") {
+                            console.log("vao r");
+                            window.timeout = setTimeout(function () {
+                                window.location.href = "/";
+                            }, 1000)
+                        }
+                        else if (data.role === "admin") {
+                            window.timeout = setTimeout(function () {
+                                window.location.href = "/admin";
+                            }, 1000)
+                        }
+                    }).catch(function (err) {
+                        alertify.error(err.responseJSON.message);
+                    })
+                }
+            })
+        });
+</script>
+<!-- Check user login -->
+<script>
+    if(Cookies.get('token')) {
+        $('#openModalLogin').addClass('d-none');
+        $('#profileDropdown').removeClass('d-none');
+    }
+</script>

@@ -31,7 +31,7 @@
     <nav>
         <div class="container">
             <ul class="nav align-items-center d-flex justify-content-center">
-                <li class="nav-item"> <a href="javascript:void(0)"
+                <li class="nav-item"> <a href="/"
                         class="nav-link note-link d-flex align-items-center active px-2 px-md-3 mr-0 mr-md-2"
                         id="all-category">
                         <span class="d-none d-md-block">HOME</span></a>
@@ -54,14 +54,17 @@
                         class="nav-link note-link d-flex align-items-center px-2 px-md-3 mr-0 mr-md-2">
                         <span class="d-none d-md-block">CONTACT</span></a>
                 </li>
-                <li class="nav-item"> <a href="javascript:void(0)"
+                <li id="openModalLogin" class="nav-item"> <a href="javascript:void(0)"
                     class="nav-link note-link d-flex align-items-center px-2 px-md-3 mr-0 mr-md-2">
                     <span class="d-none d-md-block" data-toggle="modal" data-target="#login-modal">LOGIN</span></a>
                 </li>
-                <li class="nav-item"> <a href="/profile"
+                <li id="profileDropdown" class="nav-item d-none position-relative"> <a href="/profile"
                     class="nav-link note-link d-flex align-items-center px-2 px-md-3 mr-0 mr-md-2">
                     <span class="d-none d-md-block">PROFILE</span></a>
-            </li>
+                    <ul class="dropdown">
+                        <a href="/auth/logout">LOGOUT</a>
+                    </ul>
+                </li>
             </ul>
         </div>
     </nav>

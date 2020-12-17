@@ -114,7 +114,8 @@ exports.profile = async (req, res) => {
       status: "fail",
       message: transValidation.server_incorrect,
     });
-
+  }
+}
 exports.p_editPost= async (req, res) => {
   try {
     const { id } = req.params;

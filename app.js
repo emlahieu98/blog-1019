@@ -6,6 +6,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./src/routes/index');
 const adminRouter = require("./src/routes/admin");
+const authRouter = require("./src/routes/auth");
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use("/", require("./src/routes"));
 app.use('/', indexRouter);
 app.use("/admin", adminRouter);
+app.use("/auth", authRouter);
 app.use("*", (req, res) => {
   return res.json("404 NOT FOUND");
 });
