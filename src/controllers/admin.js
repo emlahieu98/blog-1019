@@ -107,3 +107,14 @@ exports.comments = async (req, res) => {
     });
   }
 };
+
+exports.profile = async (req, res) => {
+  try {
+    res.render("admin/profile/index");
+  } catch (error) {
+    return res.status(400).json({
+      status: "fail",
+      message: transValidation.server_incorrect,
+    });
+  }
+};
