@@ -18,8 +18,8 @@ const PostSchema = new mongoose.Schema(
       slug: "title",
       unique: true,
     },
-    image: { type: String, default: "avatar.jpg" },
-    imageContent: [{ type: String, default: "avatar.jpg" }],
+    image: { type: String, default: "defaultPost.png" },
+    imageContent: [{ type: String, default: "" }],
     status: {
       type: String,
       enum: ["waiting", "approved", "success", "fail"],
@@ -32,7 +32,7 @@ const PostSchema = new mongoose.Schema(
     tags: [
       {
         type: String,
-        default: "#coder",
+        default: "coder",
       },
     ],
     commentId: [

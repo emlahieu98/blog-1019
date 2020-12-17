@@ -13,14 +13,9 @@
         <div class="container-fluid">
             <!-- Row -->
             <div class="d-sm-flex align-items-center justify-content-center mb-4">
-                <h2 class="mb-0">All Blog</h2>
+                <h2 class="mb-0">Add New Post</h2>
             </div>
             <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                  <a href="" class="btn btn-success">
-                    <i class="glyphicon glyphicon-plus"></i> Add Blog
-                  </a>
-                </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-default">
@@ -104,34 +99,49 @@
 <!--            });-->
 <!--        </script>-->
         <script>
-            //xử lý khi có sự kiện click
-            $('#btn-add-post').on('click', function () {
+            $(document).ready(function () {
+                const prd_image = $("#image");
+                prd_image.on("change", function (e) {
+                    const file = e.target.files[0];
+                    const reader = new FileReader();
+                    reader.onload = function (event) {
+                        $("#img_pview").attr("src", event.target.result);
+                    };
+                    if (file) {
+                        reader.readAsDataURL(file);
+                    }
+                });
+                //xử lý khi có sự kiện click
+                $('#btn-add-post').on('click', function () {
                     var fd = new FormData();
                     var files = $('#image')[0].files;
                     // Check file selected or not
-                    if(files.length > 0 ){
-                        fd.append('image',files[0]);
-
+                    if (files.length > 0) {
+                        fd.append('image', files[0]);
                         $.ajax({
                             url: '/admin/post/add',
                             type: 'post',
                             data: fd,
                             contentType: false,
                             processData: false,
-                            success: function(response){
-                                if(response != 0){
-                                    $("#img").attr("src",response);
-                                    $(".preview img").show(); // Display image element
-                                }else{
+                        })
+                            .then(function (data) {
+                                if (data != 0) {
+                                    const id = data.newPost._id
+                                    window.timeout = setTimeout(function () {
+                                        window.location.href = `/admin/edit-${id}`;
+                                    }, 1000)
+                                } else {
                                     alert('file not uploaded');
                                 }
-                            },
-                        });
-                    }else{
+                            });
+                    } else {
                         alert("Please select a file.");
                     }
-            });
+                });
+            })
         </script>
+
 </div>
 </body>
 

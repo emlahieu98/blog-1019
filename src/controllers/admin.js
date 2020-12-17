@@ -1,5 +1,6 @@
 
 const mongoose = require("mongoose");
+const { transValidation } = require("../../langs/errors/vn");
 const multer = require("multer");
 const postModel = require("./../models/postModel");
 const storage = multer.diskStorage({
@@ -28,7 +29,7 @@ exports.admin = async (req, res) => {
   } catch (error) {
     return res.status(400).json({
       status: "fail",
-      message: transValidation.input_incorrect,
+      message: transValidation.server_incorrect,
     });
   }
 };
@@ -38,7 +39,7 @@ exports.post = async (req, res) => {
   } catch (error) {
     return res.status(400).json({
       status: "fail",
-      message: transValidation.input_incorrect,
+      message: transValidation.server_incorrect,
     });
   }
 };
@@ -49,7 +50,7 @@ exports.addPost = async (req, res) => {
   } catch (error) {
     return res.status(400).json({
       status: "fail",
-      message: transValidation.input_incorrect,
+      message: transValidation.server_incorrect,
     });
   }
 };
@@ -67,14 +68,30 @@ exports.p_addPost= async (req, res) => {
     //  newPost.imageContent = file;
     //  console.log(newPost)
      })
-    console.log('newPost', newPost)
-    newPost.save()
+    //console.log('newPost', newPost)
+     newPost.save()
+       return res.status(200).json({
+         status: "success",
+         newPost: newPost,
+         message: 'ok1',
+       });
     });
   } catch (error) {
     console.log(error.message)
     // return res.status(400).json({
     //   status: "fail",
-    //  message: transValidation.input_incorrect,
+    //  message: transValidation.server_incorrect,
     // });
+  }
+};
+
+exports.editPost = async (req, res) => {
+  try {
+    res.json('ok')
+  } catch (error) {
+    return res.status(400).json({
+      status: "fail",
+      message: transValidation.server_incorrect,
+    });
   }
 };

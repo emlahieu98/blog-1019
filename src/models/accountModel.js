@@ -7,7 +7,7 @@ const AccountSchema = new mongoose.Schema(
     fullName: { type: String, default: "" },
     password: { type: String, default: "" },
     role: { type: String, default: "user" },
-    avatar: { type: String, default: "avatar.jpg" },
+    avatar: { type: String, default: "defaultAcc.jpg" },
     phoneNumber: { type: Number },
     address: { type: String, default: ""},
     gender: { type: String, enum: ["male", "female"], default: "male" },
