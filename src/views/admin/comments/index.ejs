@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+    <%- include('../layouts/head'); -%>
+
+<body>
+    <%- include('../layouts/header'); -%>
+    <%- include('../layouts/leftSide'); -%>
+
+    <div class="page-wrapper">
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- Row -->
+                <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                    <h2 class="mb-0">All Comments</h2>
+                </div>
+                <div class="card shadow mb-4">
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                          <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                              <div id="dataTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label></div>
+                            </div>
+                          </div>
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;height: 100vh;">
+                              <thead>
+                                <tr role="row">
+                                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="#: activate to sort column descending" aria-sort="ascending" style="width: 4px;">
+                                    #</th>
+                                  <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="fullName: activate to sort column ascending" style="width: 150px;">Post</th>
+                                  <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending" style="width: 130px;">Email</th>
+                                  <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 270px;">Comment</th>
+                                  <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 140px;">Action</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                
+                                <tr role="row" class="odd">
+                                  <td class="sorting_1">1</td>
+                                  <td>News Needs to Meet Its Audiences Where They Are</td>
+                                  <td>abc123@gmail.com</td>
+                                  <td>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit officia neque beatae at inventore excepturi numquam sint commodi alias, quam consequuntur corporis ex, distinctio eaque sapiente pariatur iure ad necessitatibus in quod obcaecati natus consequatur. Sed dicta maiores, eos culpa.
+
+                                        Voluptatum animi, voluptate sint aperiam facere a nam, ex reiciendis eum nemo ipsum nobis, rem illum cupiditate at quaerat amet qui recusandae hic, atque laboriosam perspiciatis? Esse quidem minima, voluptas necessitatibus, officia culpa quo nulla, cupiditate iste vel unde magni.
+                                  </td>
+                                  <td class="form-group">
+                                    <a href="" class="btn btn-info btn-circle"><i class="fas fa-edit"></i></a>
+                                    <a href="" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                                  </td>
+                                </tr>
+                                <tr role="row" class="odd">
+                                  <td class="sorting_1">2</td>
+                                  <td>News Needs to Meet Its Audiences Where They Are</td>
+                                  <td>abc123@gmail.com</td>
+                                  <td>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit officia neque beatae at inventore excepturi numquam sint commodi alias, quam consequuntur corporis ex, distinctio eaque sapiente pariatur iure ad necessitatibus in quod obcaecati natus consequatur. Sed dicta maiores, eos culpa.
+
+                                        Voluptatum animi, voluptate sint aperiam facere a nam, ex reiciendis eum nemo ipsum nobis, rem illum cupiditate at quaerat amet qui recusandae hic, atque laboriosam perspiciatis? Esse quidem minima, voluptas necessitatibus, officia culpa quo nulla, cupiditate iste vel unde magni.
+                                  </td>
+                                  <td class="form-group">
+                                    <a href="" class="btn btn-info btn-circle"><i class="fas fa-edit"></i></a>
+                                    <a href="" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                                  </td>
+                                </tr>
+                                <tr role="row" class="odd">
+                                  <td class="sorting_1">3</td>
+                                  <td>News Needs to Meet Its Audiences Where They Are</td>
+                                  <td>abc123@gmail.com</td>
+                                  <td>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit officia neque beatae at inventore excepturi numquam sint commodi alias, quam consequuntur corporis ex, distinctio eaque sapiente pariatur iure ad necessitatibus in quod obcaecati natus consequatur. Sed dicta maiores, eos culpa.
+
+                                        Voluptatum animi, voluptate sint aperiam facere a nam, ex reiciendis eum nemo ipsum nobis, rem illum cupiditate at quaerat amet qui recusandae hic, atque laboriosam perspiciatis? Esse quidem minima, voluptas necessitatibus, officia culpa quo nulla, cupiditate iste vel unde magni.
+                                  </td>
+                                  <td class="form-group">
+                                    <a href="" class="btn btn-info btn-circle"><i class="fas fa-edit"></i></a>
+                                    <a href="" onclick="return confirm('Are you sure?')" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                                  </td>
+                                </tr>
+                                
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                          <div class="row">
+                            <div class="col-sm-12 col-md-5">
+                              <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Page 1
+                                of 2</div>
+                            </div>
+                            <div class="col-sm-12 col-md-7">
+                              <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+                                <ul class="pagination">
+                                  <nav aria-label="Page navigation example">
+                                    <ul class="pagination ">
+                                      <li class="page-item active">
+              
+                                        <a class="page-link" href="/admin/rooms?page=1">1</a>
+                                        
+                                      </li>
+                                      
+                                      <li class="page-item ">
+              
+                                        <a class="page-link" href="/admin/rooms?page=2">2</a>
+                                        
+                                      </li>
+                                      <li class="page-item ">
+                                        <a class="page-link" href="/admin/rooms?page=2"> Next </a>
+                                      </li>
+                                      
+                                    </ul>
+                                  </nav>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+
+    <%- include('../layouts/footer'); -%>
+            
+</body>
+
+</html>

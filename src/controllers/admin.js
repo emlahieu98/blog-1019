@@ -95,3 +95,15 @@ exports.editPost = async (req, res) => {
     });
   }
 };
+
+
+exports.comments = async (req, res) => {
+  try {
+    res.render("admin/comments/index");
+  } catch (error) {
+    return res.status(400).json({
+      status: "fail",
+      message: transValidation.server_incorrect,
+    });
+  }
+};

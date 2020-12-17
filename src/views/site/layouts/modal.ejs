@@ -1,0 +1,156 @@
+<Modal>
+    <!-- Signup modal content -->
+    <div id="signup-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+    
+                <div class="modal-body">
+                    <div class="text-center mt-2 mb-4">
+                        <a href="index.html" class="text-success">
+                            <span><img class="mr-2" src="./assets/images/logo-icon.png" alt="" height="18"><img
+                                    src="./assets/images/logo-text.png" alt="" height="18"></span>
+                        </a>
+                    </div>
+    
+                    <form class="pl-3 pr-3" action="#">
+    
+                        <div class="form-group">
+                            <label for="username">Name</label>
+                            <input class="form-control" type="email" id="username" required="" placeholder="Michael Zenaty">
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="emailaddress">Email address</label>
+                            <input class="form-control" type="email" id="emailaddress" required=""
+                                placeholder="john@deo.com">
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input class="form-control" type="password" required="" id="password"
+                                placeholder="Enter your password">
+                        </div>
+    
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">I
+                                    accept <a href="#">Terms and Conditions</a></label>
+                            </div>
+                        </div>
+    
+                        <div class="form-group text-center">
+                            <button class="btn btn-block btn-secondary" type="submit">Sign Up
+                                Free</button>
+                        </div>
+
+                        <div class="mt-5 text-center">
+                            <span type="button" data-target="#login-modal" 
+                            data-toggle="modal" data-dismiss="modal">Already have account
+                                <i class="ti-check"></i>
+                            </span>
+                        </div>
+    
+                    </form>
+    
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    
+    
+    <!-- SignIn modal content -->
+    <div id="login-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="text-center mt-2 mb-4">
+                        <a href="index.html" class="text-success">
+                            <span><img class="mr-2" src="./assets/images/logo-icon.png" alt="" height="18"><img
+                                    src="./assets/images/logo-text.png" alt="" height="18"></span>
+                        </a>
+                    </div>
+    
+                    <form action="#" class="pl-3 pr-3">
+    
+                        <div class="form-group">
+                            <label for="emailaddress1">Email address</label>
+                            <input class="form-control" type="email" id="emailaddress1" required=""
+                                placeholder="john@deo.com">
+                        </div>
+    
+                        <div class="form-group">
+                            <label for="password1">Password</label>
+                            <input class="form-control" type="password" required="" id="password1"
+                                placeholder="Enter your password">
+                        </div>
+    
+                        <div class="form-group d-flex justify-content-between">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                <label class="custom-control-label" for="customCheck2">Remember me</label>
+                            </div>
+                            <span type="button" data-target="#recoverform" 
+                            data-toggle="modal" data-dismiss="modal">
+                                Forget password?
+                            </span>
+                        </div>
+    
+                        <div class="form-group text-center">
+                            <button class="btn btn-block btn-secondary" type="submit">Sign In</button>
+                        </div>
+
+                        <div class="mt-5 text-center">
+                            <span type="button" data-target="#signup-modal" 
+                            data-toggle="modal" data-dismiss="modal">Create your account 
+                                <i class="ti-pencil-alt"></i>
+                            </span>
+                        </div>
+    
+                    </form>
+    
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- Forget pwd -->
+
+    <div id="recoverform" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="text-center mt-2 mb-4">
+                        <a href="index.html" class="text-success">
+                            <span><img class="mr-2" src="./assets/images/logo-icon.png" alt="" height="18"><img
+                                    src="./assets/images/logo-text.png" alt="" height="18"></span>
+                        </a>
+                    </div>
+                    <div class="logo">
+                        <h3 class="font-weight-medium mb-3">Recover Password</h3>
+                        <span>Enter your Email and instructions will be sent to you!</span>
+                    </div>
+                    <div class="row mt-3">
+                        <!-- Form -->
+                        <form class="col-12 form-material" action="index.html">
+                            <!-- email -->
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <input class="form-control" type="email" required="" placeholder="Your email">
+                                </div>
+                            </div>
+                            <!-- pwd -->
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <button class="btn btn-block btn-secondary" type="submit"
+                                        name="action">Reset</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+    
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</Modal>
