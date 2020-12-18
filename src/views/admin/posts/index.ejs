@@ -46,88 +46,31 @@
                                 </tr>
                               </thead>
                               <tbody>
+                                <% posts.forEach((post, index) => { %>
+                                  <tr role="row" class="odd">
+                                    <td class="sorting_1"><%= index+1 %></td>
+                                    <td><%= post.title %></td>                                                                    
+                                    <td><span class="badge badge-success"><%= post.categoryId.name %></span>
+                                    </td>
+                                    <td>Tags</td>                                 
+                                   <td></td>
+                                    <td><img width="160" src="/uploads/images/posts/<%=post.image%>">>
+                                    </td>
+                                  
+                                    <td><span class="badge badge-warning">OK</span></td>
+                                  
+                                    <td class="form-group">
+                                      <a href="/admin/room-edit/5fa63d154b89532a60c6548a" class="btn btn-info btn-circle"><i class="fas fa-edit"></i></a>
+                                      <a href="/admin/room-delete/5fa63d154b89532a60c6548a"
+                                        onclick="return confirm('Bạn chắc chắn muốn xoá phòng P29 chứ ?')" class="btn btn-danger btn-circle"><i
+                                          class="fas fa-trash"></i></a>
+                                    </td>
+                                  </tr>
+
+                                <% })%>
                                 
-                                <tr role="row" class="odd">
-                                  <td class="sorting_1">1</td>
-                                  <td>News Needs to Meet Its Audiences Where They Are</td>
-                                  <td>Xamlo</td>
-                                  
-                                  <td>
-                                      <span class="badge badge-success">CODE</span>
-                                      <span class="badge badge-success">LIFE</span>
-                                      <span class="badge badge-success">PLAY</span>
-                                  </td>
-                                  
-                                  <td>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit officia neque beatae at inventore excepturi numquam sint commodi alias, quam consequuntur corporis ex, distinctio eaque sapiente pariatur iure ad necessitatibus in quod obcaecati natus consequatur. Sed dicta maiores, eos culpa.
-
-                                        Voluptatum animi, voluptate sint aperiam facere a nam, ex reiciendis eum nemo ipsum nobis, rem illum cupiditate at quaerat amet qui recusandae hic, atque laboriosam perspiciatis? Esse quidem minima, voluptas necessitatibus, officia culpa quo nulla, cupiditate iste vel unde magni.
-    
-                                       </td>
-                                  <td><img width="160" src="https://preview.colorlib.com/theme/meranda/images/big_img_1.jpg">
-                                  </td>
-                                  
-                                  <td><span class="badge badge-warning">OK</span></td>
-                                  
-                                  <td class="form-group">
-                                    <a href="/admin/room-edit/5fa63d154b89532a60c6548a" class="btn btn-info btn-circle"><i class="fas fa-edit"></i></a>
-                                    <a href="/admin/room-delete/5fa63d154b89532a60c6548a" onclick="return confirm('Bạn chắc chắn muốn xoá phòng P29 chứ ?')" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                                  </td>
-                                </tr>
-                                <tr role="row" class="odd">
-                                  <td class="sorting_1">1</td>
-                                  <td>News Needs to Meet Its Audiences Where They Are</td>
-                                  <td>Xamlo</td>
-                                  
-                                  <td>
-                                      <span class="badge badge-success">CODE</span>
-                                      <span class="badge badge-success">LIFE</span>
-                                      <span class="badge badge-success">PLAY</span>
-                                  </td>
-                                  
-                                  <td>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit officia neque beatae at inventore excepturi numquam sint commodi alias, quam consequuntur corporis ex, distinctio eaque sapiente pariatur iure ad necessitatibus in quod obcaecati natus consequatur. Sed dicta maiores, eos culpa.
-
-                                        Voluptatum animi, voluptate sint aperiam facere a nam, ex reiciendis eum nemo ipsum nobis, rem illum cupiditate at quaerat amet qui recusandae hic, atque laboriosam perspiciatis? Esse quidem minima, voluptas necessitatibus, officia culpa quo nulla, cupiditate iste vel unde magni.
-    
-                                       </td>
-                                  <td><img width="160" src="https://preview.colorlib.com/theme/meranda/images/big_img_1.jpg">
-                                  </td>
-                                  
-                                  <td><span class="badge badge-warning">OK</span></td>
-                                  
-                                  <td class="form-group">
-                                    <a href="/admin/room-edit/5fa63d154b89532a60c6548a" class="btn btn-info btn-circle"><i class="fas fa-edit"></i></a>
-                                    <a href="/admin/room-delete/5fa63d154b89532a60c6548a" onclick="return confirm('Bạn chắc chắn muốn xoá phòng P29 chứ ?')" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                                  </td>
-                                </tr>
-                                <tr role="row" class="odd">
-                                  <td class="sorting_1">1</td>
-                                  <td>News Needs to Meet Its Audiences Where They Are</td>
-                                  <td>Xamlo</td>
-                                  
-                                  <td>
-                                      <span class="badge badge-success">CODE</span>
-                                      <span class="badge badge-success">LIFE</span>
-                                      <span class="badge badge-success">PLAY</span>
-                                  </td>
-                                  
-                                  <td>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit officia neque beatae at inventore excepturi numquam sint commodi alias, quam consequuntur corporis ex, distinctio eaque sapiente pariatur iure ad necessitatibus in quod obcaecati natus consequatur. Sed dicta maiores, eos culpa.
-
-                                        Voluptatum animi, voluptate sint aperiam facere a nam, ex reiciendis eum nemo ipsum nobis, rem illum cupiditate at quaerat amet qui recusandae hic, atque laboriosam perspiciatis? Esse quidem minima, voluptas necessitatibus, officia culpa quo nulla, cupiditate iste vel unde magni.
-    
-                                       </td>
-                                  <td><img width="160" src="https://preview.colorlib.com/theme/meranda/images/big_img_1.jpg">
-                                  </td>
-                                  
-                                  <td><span class="badge badge-warning">OK</span></td>
-                                  
-                                  <td class="form-group">
-                                    <a href="/admin/room-edit/5fa63d154b89532a60c6548a" class="btn btn-info btn-circle"><i class="fas fa-edit"></i></a>
-                                    <a href="/admin/room-delete/5fa63d154b89532a60c6548a" onclick="return confirm('Bạn chắc chắn muốn xoá phòng P29 chứ ?')" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                                  </td>
-                                </tr>
+                               
+                                
                                 
                               </tbody>
                             </table>

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const mongoosePaginate = require("mongoose-paginate-v2");
-var slug = require("mongoose-slug-generator");
+const slug = require("mongoose-slug-generator");
 mongoose.plugin(slug);
 const PostSchema = new mongoose.Schema(
   {
@@ -13,6 +13,7 @@ const PostSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+
     image: { type: String, default: "defaultPost.png" },
     imageContent: [{ type: String, default: "" }],
     status: {
@@ -27,7 +28,7 @@ const PostSchema = new mongoose.Schema(
     tags: [
       {
         type: String,
-        default: "coder",
+        default: "code",
       },
     ],
     commentId: [
@@ -36,14 +37,14 @@ const PostSchema = new mongoose.Schema(
         ref: "comments",
       },
     ],
+    categoryId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "categories",
+    },
     slug: {
       type: String,
       slug: "title",
       unique: true,
-    },
-    categoryId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "categories",
     },
   },
   {

@@ -36,7 +36,8 @@ exports.admin = async (req, res , next) => {
 };
 exports.post = async (req, res , next) => {
   try {
-    res.render("admin/posts/index");
+    const posts = await postModel.find().populate("categoryId").sort("-_id");
+    res.render("admin/posts/index", { posts });
   } catch (error) {
     return res.status(400).json({
       status: "fail",
@@ -66,7 +67,7 @@ exports.p_addPost= async (req, res, next) => {
     const newPost = new postModel({
       image: req.file.filename,
       title: req.body.title,
-     })
+    })
       await newPost.save()
        return res.status(200).json({
          status: "success",
@@ -86,7 +87,6 @@ exports.editPost = async (req, res, next) => {
     const {id} = req.params;
     const post = await postModel.findOne({ _id: id })
     const categories = await categoryModel.find();
-    console.log("🚀 ~ file: admin.js ~ line 89 ~ exports.editPost= ~ categories", categories)
     res.render("admin/posts/edit", { post, categories });
   } catch (error) {
     return res.status(400).json({
