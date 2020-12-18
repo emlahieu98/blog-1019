@@ -295,21 +295,26 @@ form label {
 }
 
 .dropdown {
-    display: none;
-    justify-content: center;
-    align-items: center;
+    position: relative;
 }
 
-.dropdown a {
-    display: block;
-    width: inherit;
-    border: 1px solid black;
-}
-
-.nav-item:hover .dropdown {
+.dropdown-content {
     position: absolute;
-    list-style: none;
-    display: flex;
-    width: 100%;
-    top: 100%;
+    display: none;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #f9f9f9;
+    z-index: 1;
+    border-radius: 3px;
+    overflow: hidden;
 }
+
+.dropdown-content a {
+    padding: 8px 14px;
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-content a:hover {background-color: rgba(100, 145, 48, 0.205);}
+.dropdown:hover .dropdown-content {display: inline-block;}
