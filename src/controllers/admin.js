@@ -23,7 +23,7 @@ const upload = multer({
     fileSize: 5 * 1024 * 1024, // limit file max 5MB
   },
 }).single('image')
-exports.admin = async (req, res) => {
+exports.admin = async (req, res , next) => {
   try {
     res.render("admin/dashboard");
   } catch (error) {
@@ -33,7 +33,7 @@ exports.admin = async (req, res) => {
     });
   }
 };
-exports.post = async (req, res) => {
+exports.post = async (req, res , next) => {
   try {
     res.render("admin/posts/index");
   } catch (error) {
@@ -44,7 +44,7 @@ exports.post = async (req, res) => {
   }
 };
 
-exports.addPost = async (req, res) => {
+exports.addPost = async (req, res, next) => {
   try {
     res.render("admin/posts/add");
   } catch (error) {
@@ -54,7 +54,7 @@ exports.addPost = async (req, res) => {
     });
   }
 };
-exports.p_addPost= async (req, res) => {
+exports.p_addPost= async (req, res, next) => {
   try {
      upload(req, res, async function (err) {
        if (err instanceof multer.MulterError) {
@@ -80,7 +80,7 @@ exports.p_addPost= async (req, res) => {
   }
 };
 
-exports.editPost = async (req, res) => {
+exports.editPost = async (req, res, next) => {
   try {
     const {id} = req.params;
     const post = await postModel.findOne({_id:id})
@@ -95,7 +95,7 @@ exports.editPost = async (req, res) => {
 
 
 
-exports.comments = async (req, res) => {
+exports.comments = async (req, res, next) => {
   try {
     res.render("admin/comments/index");
   } catch (error) {
@@ -120,9 +120,18 @@ exports.p_editPost= async (req, res) => {
   try {
     const { id } = req.params;
     uploadMany(req, res, async function (err) {
+      console.log("vao day r")
+      console.log(req.body)
       // room not choose file to edit
       if (!req.files) {
+        const updatePost = {
+          title: req.body.title,
+          tags: req.body.tags,
+          categoryId: req.body.categoryId,
+          content: req.body.content,
+        };
         await postModel.updateOne({ _id: id }, updatePost);
+        return res.redirect("/");
       } else {
         if (err instanceof multer.MulterError) {
           res.json("Lỗi định dạng, vui lòng xem lại ảnh");
@@ -131,15 +140,14 @@ exports.p_editPost= async (req, res) => {
         }
         let updatePost = {
           title: req.body.title,
-          categoryId: req.body.categoryId,
+        //  categoryId: req.body.categoryId,
           tags: [],
           content: req.body.content,
         };
         let arrImageContent = req.files.map(item => item.filename)
         updatePost.imageContent = arrImageContent
-        console.log(updatePost)
         await postModel.updateOne({ _id: id }, updatePost);
-        res.json('update ok')
+        return res.redirect("/");
       }
     });
   } catch (error) {

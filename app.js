@@ -1,8 +1,12 @@
+require('dotenv').config();
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const jwt = require('jsonwebtoken');
+const { checkAdmin } = require("./src/middlewares/checkAdmin");
+const { checkLogin } = require("./src/middlewares/checkLogin");
 
 const indexRouter = require('./src/routes/index');
 const adminRouter = require("./src/routes/admin");
@@ -19,13 +23,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use("/", require("./src/routes"));
+app.use("/", require("./src/routes"))
 app.use('/', indexRouter);
-app.use("/admin", adminRouter);
 app.use("/auth", authRouter);
+
+//app.use("/admin", checkLogin, checkAdmin, adminRouter);
+app.use("/admin", adminRouter)
 app.use("*", (req, res) => {
-  return res.json("404 NOT FOUND");
+  return res.render("404NotFound")
 });
 // error handler
 app.use(function(err, req, res, next) {
@@ -38,4 +43,5 @@ app.use(function(err, req, res, next) {
 });
 //init mongo
 require("./config/mongo")
+
 module.exports = app;

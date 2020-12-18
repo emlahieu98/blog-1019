@@ -4,7 +4,7 @@ const { transValidation } = require("../../langs/errors/vn");
 const accountModel = require("../models/accountModel");
 const jwt = require("jsonwebtoken");
 const NUMBER_SALT = process.env.NUMBER_SALT || 10;
-const SECRET_TOKEN = process.env.SECRET_TOKEN || 'huy';
+const SECRET_TOKEN = process.env.SECRET_TOKEN;
 const salt = bcrypt.genSaltSync(NUMBER_SALT);
 
 exports.register = async (req, res) => {
@@ -73,7 +73,7 @@ exports.login = async (req, res) => {
      
   };
   
-  exports.logout = async (req, res) => {
+exports.logout = async (req, res) => {
     try {
         cookie = req.cookies;
         for (var prop in cookie) {

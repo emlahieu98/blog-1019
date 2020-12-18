@@ -18,7 +18,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <form id="form-add-room" enctype="multipart/form-data"  novalidate="novalidate">
+                            <form id="form-add-room" method="post" enctype="multipart/form-data" novalidate="novalidate">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <input id="idPost" name="idPost" value="<%=post._id%>" class="form-control" placeholder="">
@@ -45,7 +45,7 @@
                                             <input id="tags" name="tags" value="<%=post.tags%>" type="text" class="form-control">
                                         </div>
                                         <div class="mt-5">
-                                            <button id="btn-edit-post" name="btn-edit-post" type="button" class="btn btn-success">
+                                            <button id="btn-edit-post" name="btn-edit-post" type="submit" class="btn btn-success">
                                                 Edit Post
                                             </button>
                                             <button type="reset" class="btn btn-default">Refresh</button>
@@ -70,44 +70,44 @@
         </div>
     </div>
     <%- include('../layouts/footer'); -%>
-            <script>
-                $(document).ready(function() {
-
-                        $('.summernote').summernote({
-                            height: 500,
-                            onImageUpload: function (files, editor, welEditable) {
-                                sendFile(files, editor, welEditable);
-                            }
-                        });
-                    $('#btn-edit-post').on('click', function () {
-                        let title = $("#title").val();
-                        let tags = $("#tags").val();
-                        let categoryId = $("#categoryId").val();
-                        let id = $("#idPost").val();
-                            function sendFile(file, editor, welEditable) {
-                                data = new FormData();
-                                data.append("file", file);
-                                data.append("title", title);
-                                data.append("tags", tags);
-                                data.append("categoryId", categoryId)
-                                data.append("id", id)
-                                $.ajax({
-                                    data: data,
-                                    type: "POST",
-                                    url: `admin/post/edit-${id}`,
-                                    cache: false,
-                                    contentType: false,
-                                    processData: false,
-                                    success: function (url) {
-                                        editor.insertImage(welEditable, url);
-                                        // arlet("up load ok")
-                                    }
-                                });
-                            }
-                    })
-                });
-            </script>
-
+    <script>
+        $(document).ready(function() {
+            $('.summernote').summernote({
+                height: 500,
+                onImageUpload: function (files, editor, welEditable) {
+                    sendFile(files, editor, welEditable);
+                }
+            });
+            // $('#btn-edit-post').on('click', function () {
+            //     console.log("ok")
+            //     var title = $("#title").val();
+            //     var tags = $("#tags").val();
+            //     var categoryId = $("#categoryId").val();
+            //  //   let content = $("#content").val();
+            //     var id = $("#idPost").val();
+            //     function sendFile(file, editor, welEditable) {
+            //         data = new FormData();
+            //         data.append("file", file);
+            //         data.append("title", title);
+            //         data.append("tags", tags);
+            //         data.append("categoryId", categoryId)
+            //         $.ajax({
+            //             data: data,
+            //             type: "POST",
+            //             url: `/admin/post/edit-${id}`,
+            //             cache: false,
+            //             contentType: false,
+            //             processData: false,
+            //             success: function (url) {
+            //                 editor.insertImage(welEditable, url);
+            //
+            //                  arlet("up load ok")
+            //             }
+            //         });
+            //     }
+            // })
+        });
+    </script>
 </div>
 </body>
 
