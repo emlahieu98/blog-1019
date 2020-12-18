@@ -21,7 +21,7 @@
                             <form id="form-add-room" method="post" enctype="multipart/form-data" novalidate="novalidate">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input id="idPost" name="idPost" value="<%=post._id%>" class="form-control" placeholder="">
+                                        <input id="idPost" name="idPost" value="<%=post._id%>" class="form-control" type="hidden">
                                         <div class="form-group">
                                             <label>Image</label>
                                             <div class="mt-3">
@@ -35,9 +35,10 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Category</label>
-                                            <select id="categoryId" name="categoryId" class="form-control">
-                                                <option value="code" selected="">Code</option>
-                                                <option value="life">Life</option>
+                                            <select id=categoryId" name="categoryId" class="form-control">
+                                            <% categories.forEach(category => { %>
+                                                    <option value="<%=category._id%>"><%=category.name%></option>
+                                            <% }) %>       
                                             </select>
                                         </div>
                                         <div class="form-group">
@@ -78,34 +79,6 @@
                     sendFile(files, editor, welEditable);
                 }
             });
-            // $('#btn-edit-post').on('click', function () {
-            //     console.log("ok")
-            //     var title = $("#title").val();
-            //     var tags = $("#tags").val();
-            //     var categoryId = $("#categoryId").val();
-            //  //   let content = $("#content").val();
-            //     var id = $("#idPost").val();
-            //     function sendFile(file, editor, welEditable) {
-            //         data = new FormData();
-            //         data.append("file", file);
-            //         data.append("title", title);
-            //         data.append("tags", tags);
-            //         data.append("categoryId", categoryId)
-            //         $.ajax({
-            //             data: data,
-            //             type: "POST",
-            //             url: `/admin/post/edit-${id}`,
-            //             cache: false,
-            //             contentType: false,
-            //             processData: false,
-            //             success: function (url) {
-            //                 editor.insertImage(welEditable, url);
-            //
-            //                  arlet("up load ok")
-            //             }
-            //         });
-            //     }
-            // })
         });
     </script>
 </div>

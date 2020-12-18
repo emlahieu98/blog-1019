@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const { transValidation } = require("../../langs/errors/vn");
 const multer = require("multer");
 const postModel = require("./../models/postModel");
+const categoryModel = require("./../models/categoryModel");
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "public/uploads/images/posts/");
@@ -43,7 +44,6 @@ exports.post = async (req, res , next) => {
     });
   }
 };
-
 exports.addPost = async (req, res, next) => {
   try {
     res.render("admin/posts/add");
@@ -62,11 +62,12 @@ exports.p_addPost= async (req, res, next) => {
            status: "fail",
            message: transValidation.upload_incorrect,
          });
-       }
+       } 
     const newPost = new postModel({
       image: req.file.filename,
+      title: req.body.title,
      })
-     newPost.save()
+      await newPost.save()
        return res.status(200).json({
          status: "success",
          newPost: newPost,
@@ -83,8 +84,10 @@ exports.p_addPost= async (req, res, next) => {
 exports.editPost = async (req, res, next) => {
   try {
     const {id} = req.params;
-    const post = await postModel.findOne({_id:id})
-    res.render("admin/posts/edit", {post});
+    const post = await postModel.findOne({ _id: id })
+    const categories = await categoryModel.find();
+    console.log("🚀 ~ file: admin.js ~ line 89 ~ exports.editPost= ~ categories", categories)
+    res.render("admin/posts/edit", { post, categories });
   } catch (error) {
     return res.status(400).json({
       status: "fail",
@@ -120,8 +123,6 @@ exports.p_editPost= async (req, res) => {
   try {
     const { id } = req.params;
     uploadMany(req, res, async function (err) {
-      console.log("vao day r")
-      console.log(req.body)
       // room not choose file to edit
       if (!req.files) {
         const updatePost = {
@@ -131,7 +132,7 @@ exports.p_editPost= async (req, res) => {
           content: req.body.content,
         };
         await postModel.updateOne({ _id: id }, updatePost);
-        return res.redirect("/");
+        return res.redirect("/admin/posts");
       } else {
         if (err instanceof multer.MulterError) {
           res.json("Lỗi định dạng, vui lòng xem lại ảnh");
@@ -140,22 +141,20 @@ exports.p_editPost= async (req, res) => {
         }
         let updatePost = {
           title: req.body.title,
-        //  categoryId: req.body.categoryId,
+          categoryId: req.body.categoryId,
           tags: [],
           content: req.body.content,
         };
         let arrImageContent = req.files.map(item => item.filename)
         updatePost.imageContent = arrImageContent
         await postModel.updateOne({ _id: id }, updatePost);
-        return res.redirect("/");
+        return res.redirect("/admin/posts");
       }
     });
   } catch (error) {
-    console.log(error.message)
-    // return res.status(400).json({
-    //   status: "fail",
-    //  message: transValidation.server_incorrect,
-    // });
-
+    return res.status(400).json({
+      status: "fail",
+     message: transValidation.server_incorrect,
+    });
   }
 };

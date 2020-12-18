@@ -22,7 +22,11 @@
                             <div class="panel-body">
                                 <form id="form-add-room" enctype="multipart/form-data"  novalidate="novalidate">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Title</label>
+                                            <input id="title" required="" name="title" type="text">
+                                            </div>
                                             <div class="form-group">
                                                 <label>Please select an image for new post</label>
                                                 <input id="image" required="" name="image" type="file">
@@ -90,8 +94,10 @@
                 });
                 //xử lý khi có sự kiện click
                 $('#btn-add-post').on('click', function () {
+                    var title = $("#title").val()
                     var fd = new FormData();
                     var files = $('#image')[0].files;
+                     fd.append("title", title);
                     // Check file selected or not
                     if (files.length > 0) {
                         fd.append('image', files[0]);

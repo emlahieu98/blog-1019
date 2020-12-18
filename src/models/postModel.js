@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const mongoosePaginate = require("mongoose-paginate-v2");
-const slug = require("mongoose-slug-generator");
+var slug = require("mongoose-slug-generator");
+mongoose.plugin(slug);
 const PostSchema = new mongoose.Schema(
   {
     // Owner: {
@@ -10,13 +11,7 @@ const PostSchema = new mongoose.Schema(
     // },
     title: {
       type: String,
-      unique: true,
       default: "",
-    },
-    slug: {
-      type: String,
-      slug: "title",
-      unique: true,
     },
     image: { type: String, default: "defaultPost.png" },
     imageContent: [{ type: String, default: "" }],
@@ -41,10 +36,15 @@ const PostSchema = new mongoose.Schema(
         ref: "comments",
       },
     ],
-    // categoryId: {
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   ref: "categories",
-    // },
+    slug: {
+      type: String,
+      slug: "title",
+      unique: true,
+    },
+    categoryId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "categories",
+    },
   },
   {
     versionKey: false,
@@ -52,5 +52,4 @@ const PostSchema = new mongoose.Schema(
   }
 );
 PostSchema.plugin(mongoosePaginate);
-PostSchema.plugin(slug);
 module.exports = mongoose.model("posts", PostSchema);

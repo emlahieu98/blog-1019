@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const mongoosePaginate = require("mongoose-paginate-v2");
-const slug = require("mongoose-slug-generator");
 const CategorySchema = new mongoose.Schema(
   {
     name:
@@ -16,4 +15,3 @@ const CategorySchema = new mongoose.Schema(
 );
 CategorySchema.plugin(mongoosePaginate);
 module.exports = mongoose.model("categories", CategorySchema);
-
