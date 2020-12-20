@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const { transValidation } = require("../../langs/errors/vn");
 const accountModel = require("../models/accountModel");
 const jwt = require("jsonwebtoken");
-const NUMBER_SALT = process.env.NUMBER_SALT || 10;
+const NUMBER_SALT =  10;
 const SECRET_TOKEN = process.env.SECRET_TOKEN;
 const salt = bcrypt.genSaltSync(NUMBER_SALT);
 

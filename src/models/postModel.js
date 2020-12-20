@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
+
+var slug = require('mongoose-slug-updater');
 const mongoosePaginate = require("mongoose-paginate-v2");
-const slug = require("mongoose-slug-generator");
 mongoose.plugin(slug);
 const PostSchema = new mongoose.Schema(
   {
@@ -13,7 +14,11 @@ const PostSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
-
+    slug: {
+      type: String,
+      slug: 'title',
+      unique: true,
+    },
     image: { type: String, default: "defaultPost.png" },
     imageContent: [{ type: String, default: "" }],
     status: {
@@ -40,11 +45,6 @@ const PostSchema = new mongoose.Schema(
     categoryId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "categories",
-    },
-    slug: {
-      type: String,
-      slug: "title",
-      unique: true,
     },
   },
   {
